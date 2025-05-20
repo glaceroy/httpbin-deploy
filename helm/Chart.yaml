@@ -1,0 +1,6 @@
+apiVersion: v2
+name: httpbin-deploy
+description: A Helm chart to deploy httpbin application
+type: application
+version: 0.1.0
+

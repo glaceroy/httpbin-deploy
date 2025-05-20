@@ -1,0 +1,16 @@
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata:
+  name: httpbin
+  namespace: {{ .Values.namespace }}
+  labels:
+    {{- include "httpbin-deploy.labels" . | nindent 4 }}
+spec:
+  host: "{{ .Values.hostname }}"
+  port:
+    targetPort: http2
+  to:
+    kind: Service
+    name: ig001
+    weight: 100
+  wildcardPolicy: None
