@@ -9,15 +9,15 @@ spec:
   destination:
     namespace: lbg-ocp-engineering-100-lab
     server: https://kubernetes.default.svc
-  project: bookinfo-project-dev
+  project: default
   source:
-    path: development/helm-config/
-    repoURL: https://github.com/glaceroy/bookinfo
+    path: helm/
+    repoURL: https://github.com/glaceroy/httpbin-deploy.git
     targetRevision: HEAD
     helm:
       version: v3
       valuesFile:
-        - development/helm-config/values.yaml
+        - helm/values.yaml
   info:
     - name: 'Purpose'
       value: 'Application to test istio use cases'
