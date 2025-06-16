@@ -1,23 +1,23 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: httpbin-deploy
+  name: httpbin-deploy-qa-env
   namespace: openshift-gitops
   labels:
-    app-type: httpbin-deploy
+    app-type: httpbin-deploy-qa-env
 spec:
   destination:
-    namespace: lbg-ocp-engineering-100-lab
+    namespace: lbg-ocp-servicemesh-3-400-lab
     server: https://kubernetes.default.svc
   project: default
   source:
-    path: helm/
+    path: qa-env/helm-config/
     repoURL: https://github.com/glaceroy/httpbin-deploy.git
     targetRevision: HEAD
     helm:
       version: v3
       valuesFile:
-        - helm/values.yaml
+        - qa-env/helm-config/values.yaml
   info:
     - name: 'Purpose'
       value: 'Application to test istio use cases'

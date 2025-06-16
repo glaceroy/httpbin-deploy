@@ -1,0 +1,25 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: httpbin-deploy-development
+  namespace: openshift-gitops
+  labels:
+    app-type: httpbin-deploy-development
+spec:
+  destination:
+    namespace: lbg-ocp-engineering-100-lab
+    server: https://kubernetes.default.svc
+  project: default
+  source:
+    path: development/helm-config/
+    repoURL: https://github.com/glaceroy/httpbin-deploy.git
+    targetRevision: HEAD
+    helm:
+      version: v3
+      valuesFile:
+        - development/helm-config/values.yaml
+  info:
+    - name: 'Purpose'
+      value: 'Application to test istio use cases'
+  syncPolicy:
+    automated: {}
