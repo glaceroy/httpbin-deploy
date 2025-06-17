@@ -16,7 +16,7 @@ spec:
     targetRevision: HEAD
     helm:
       version: v3
-      valuesFile:
+      valueFiles:
         - values-qa.yaml
   info:
     - name: 'Purpose'
