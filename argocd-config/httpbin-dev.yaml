@@ -1,10 +1,10 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: httpbin-deploy-development
+  name: httpbin-development
   namespace: openshift-gitops
   labels:
-    app-type: httpbin-deploy-development
+    app-type: httpbin-development
 spec:
   destination:
     namespace: lbg-ocp-engineering-100-lab

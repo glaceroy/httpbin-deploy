@@ -1,10 +1,10 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: httpbin-deploy-qa-env
+  name: httpbin-qa
   namespace: openshift-gitops
   labels:
-    app-type: httpbin-deploy-qa-env
+    app-type: httpbin-qa
 spec:
   destination:
     namespace: lbg-ocp-servicemesh-3-400-lab
