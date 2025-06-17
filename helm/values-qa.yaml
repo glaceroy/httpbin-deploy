@@ -1,0 +1,28 @@
+namespace: lbg-ocp-servicemesh-3-400-lab
+
+replicaCount: 1
+image:
+  repository: utility.cloud.lab:8443/httpbin/go-httpbin
+  pullPolicy: IfNotPresent
+  tag: v2.15.0
+
+hostname: httpbin-servicemesh-3.apps.ocp.cloud.lab
+
+service:
+  port: 8000
+  targetport: 8080
+
+podAnnotations:
+  sidecar.istio.io/inject: "true"
+
+podLabels:
+  app: httpbin
+  version: v1
+
+resources:
+  limits:
+    cpu: 50m
+    memory: 128Mi
+  requests:
+    cpu: 50m
+    memory: 128Mi
