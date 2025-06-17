@@ -11,13 +11,13 @@ spec:
     server: https://kubernetes.default.svc
   project: default
   source:
-    path: development/helm-config/
+    path: helm/
     repoURL: https://github.com/glaceroy/httpbin-deploy.git
     targetRevision: HEAD
     helm:
       version: v3
       valuesFile:
-        - development/helm-config/values.yaml
+        - /helm/dev-values.yaml
   info:
     - name: 'Purpose'
       value: 'Application to test istio use cases'
