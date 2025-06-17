@@ -6,11 +6,11 @@ metadata:
   labels:
     {{- include "httpbin-deploy.labels" . | nindent 4 }}
 spec:
-  host: "{{ .Values.hostname }}"
+  host: "{{ .Values.route.hostname }}"
   port:
     targetPort: http2
   to:
     kind: Service
-    name: ig001
+    name: {{ .Values.route.service }}
     weight: 100
   wildcardPolicy: None
