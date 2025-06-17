@@ -17,7 +17,7 @@ spec:
     helm:
       version: v3
       valuesFile:
-        - helm/qa-values.yaml
+        - helm/values-qa.yaml
   info:
     - name: 'Purpose'
       value: 'Application to test istio use cases'
